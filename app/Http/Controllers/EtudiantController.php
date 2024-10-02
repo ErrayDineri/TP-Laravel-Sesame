@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Etudiant;
 
 class EtudiantController extends Controller
 {
     public function index()
     {
-        $nom='Guermazi'; $prenom='Rayen';
-        return view('etudiant',compact('nom', 'prenom'));
+        $liste=Etudiant::orderBy('nom', 'asc')->get();
+        return view('etudiant',compact('liste'));
         // return view('etudiant', ['nom'=>$nom, 'prenom'=>$prenom,])
     }
 }

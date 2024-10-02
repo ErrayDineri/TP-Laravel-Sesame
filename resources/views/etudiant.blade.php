@@ -22,28 +22,22 @@
                 <th>Numéro</th>
                 <th>Nom</th>
                 <th>Prenom</th>
+                <th>Classe</th>
                 <th width="280px">Action</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>Guermazi</td>
-                <td>Rayen</td>
-                <td>
-                    <a href="#" class="btn btn-info">Show</a>
-                    <a href="#" class="btn btn-primary">Edit</a>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Ismail</td>
-                <td>Mhiri</td>
-                <td>
-                    <a href="#" class="btn btn-info">Show</a>
-                    <a href="#" class="btn btn-primary">Edit</a>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </td>
-            </tr>
+            @foreach ($liste as $value)
+                <tr>
+                    <td>{{$loop->index}}</td>
+                    <td>{{$value->nom}}</td>
+                    <td>{{$value->prenom}}</td>
+                    <td>{{$value->classes_id}}</td>
+                    <td>
+                        <a href="#" class="btn btn-info">Show</a>
+                        <a href="#" class="btn btn-primary">Edit</a>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            @endforeach
         </table>
     @endsection
 </body>
